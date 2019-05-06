@@ -14,7 +14,7 @@ public class SecurityServiceImp implements SecurityService{
 
 	public String getCurUser() {
 		RpcInvokeContext ctx = RpcInvokeContext.getContext();
-		ctx.putRequestBaggage("userid", "cxc");
+		ctx.putResponseBaggage("userid", "cxc");
 		return "当前用户信息";
 	}
 

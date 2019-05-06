@@ -18,9 +18,10 @@ public class UserService {
 	
 	
 	public String getCurUser() {
+		final String curUser = securityService.getCurUser();
 		RpcInvokeContext ctx = RpcInvokeContext.getContext();
-		String user = ctx.getRequestBaggage("userid");
-		return securityService.getCurUser()+"rpcuser:"+user;
+		String user = ctx.getResponseBaggage("userid");
+		return curUser +"rpcuser:"+user;
 	}
 	
 }
